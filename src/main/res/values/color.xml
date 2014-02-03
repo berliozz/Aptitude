@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="female_color">#ce8da5</color>
+    <color name="male_color">#73c2d0</color>
+    <color name="gender_color">#aaaaaa</color>
+    <color name="btn_no_color">#c16953</color>
+    <color name="btn_no_light">#cd8775</color>
+    <color name="btn_yes_color">#4b92a5</color>
+    <color name="btn_yes_light">#6ea7b7</color>
+    <color name="btn_maybe_color">#545555</color>
+    <color name="btn_maybe_light">#767676</color>
+
+</resources>

@@ -1,0 +1,68 @@
+<RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="#eae6e4">
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:paddingTop="20dp" android:layout_gravity="center_horizontal"
+            android:layout_alignParentLeft="false" android:layout_marginLeft="10dp" android:layout_alignParentTop="true"
+            android:layout_marginRight="10dp" android:layout_marginTop="5dp" android:id="@+id/navHead">
+        <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgDash1" android:paddingLeft="10dp" android:src="@drawable/div"
+                android:layout_gravity="center_vertical" android:layout_weight="0.1" android:scaleType="centerCrop"
+                android:contentDescription="@string/Dash" android:tint="#e2dcd8"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgCircle2" android:paddingLeft="5dp" android:paddingRight="5dp"
+                android:src="@drawable/dotempty" android:contentDescription="@string/Circle"/>
+        <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgDash2" android:src="@drawable/div" android:layout_gravity="center_vertical"
+                android:scaleType="centerCrop" android:layout_weight="0.25" android:contentDescription="@string/Dash"
+                android:tint="#e2dcd8"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgCircle3" android:src="@drawable/dotnext" android:paddingLeft="5dp"
+                android:paddingRight="5dp" android:contentDescription="@string/Circle"/>
+        <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgDash3" android:src="@drawable/div" android:layout_gravity="center_vertical"
+                android:scaleType="centerCrop" android:layout_weight="0.25"
+                android:contentDescription="@string/Dash"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgCircle1" android:src="@drawable/dot" android:paddingLeft="5dp"
+                android:paddingRight="5dp" android:contentDescription="@string/Circle"/>
+        <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgDash4" android:layout_gravity="center_vertical" android:src="@drawable/div"
+                android:paddingRight="10dp" android:layout_weight="0.1"
+                android:scaleType="centerCrop" android:contentDescription="@string/Dash"/>
+    </LinearLayout>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/result"
+            android:id="@+id/txtTooltip" android:background="@drawable/tooltip" android:textColor="#f09984"
+            android:textAlignment="center" android:paddingLeft="6dp" android:paddingRight="6dp"
+            android:layout_below="@id/navHead" android:layout_marginTop="5dp" android:layout_centerHorizontal="true"
+            android:layout_alignParentRight="true" android:layout_marginRight="28dp"/>
+    <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/txtTooltip"
+            />
+
+</RelativeLayout>
