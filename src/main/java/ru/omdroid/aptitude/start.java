@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 
-public class start extends Activity implements SeekBar.OnSeekBarChangeListener {
+public class Start extends Activity implements SeekBar.OnSeekBarChangeListener {
 
     int age, checker;
     Boolean gender;
@@ -75,7 +75,7 @@ public class start extends Activity implements SeekBar.OnSeekBarChangeListener {
                 if (gender !=null && userName.getText().length()!=0 && seekStatus == true) {
                    uname = userName.getText().toString();
                    Intent testStart = new Intent();
-                   testStart.setClass(start.this, test.class);
+                   testStart.setClass(Start.this, Test.class);
                    testStart.putExtra("uAge", age);
                    testStart.putExtra("uGender", gender);
                    testStart.putExtra("uName", uname);

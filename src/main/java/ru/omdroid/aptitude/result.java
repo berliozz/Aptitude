@@ -8,35 +8,50 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.widget.TextView;
+import android.widget.ImageView;
 
-public class result extends FragmentActivity {
+public class Result extends FragmentActivity {
 
     private MyAdapter mAdapter;
     private ViewPager mPager;
-    private int[] uan;
-    String [] categoryQuest;
+    private String completeUan[][];
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-        mAdapter = new MyAdapter (getSupportFragmentManager());
-        mPager = (ViewPager)findViewById(R.id.pager);
-        mPager.setAdapter(mAdapter);
 
+        String categoryQuest[];
         Resources testCat = getResources();
         categoryQuest = testCat.getStringArray(R.array.category);
 
         Bundle bndResult = this.getIntent().getExtras();
-        uan = bndResult.getIntArray("strDef");
+        int uan[] = bndResult.getIntArray("strDef");
 
+        String completeUan[][] = new String[uan.length][];
+
+        for (int i=0; i<categoryQuest.length; i++) {
+            String s = categoryQuest[i];
+            String st[] = s.split(":");
+
+            System.arraycopy(st, 1, completeUan[i], 0, 2);
+            System.arraycopy(uan[i], 0, completeUan[i], 2, 1);
+
+            System.out.printf(completeUan[i][0] + " - " + completeUan [i][2] + " - " + completeUan[i][1]);
+
+        }
+
+        mAdapter = new MyAdapter (getSupportFragmentManager(), completeUan);
+        mPager = (ViewPager)findViewById(R.id.pager);
+        mPager.setAdapter(mAdapter);
 
     }
 
     public static class MyAdapter extends FragmentPagerAdapter {
-        public MyAdapter (FragmentManager fm) {
+        String completeUan[][];
+        public MyAdapter (FragmentManager fm, String mUan[][]) {
             super (fm);
+            this.completeUan = mUan;
         }
 
         @Override
@@ -46,27 +61,29 @@ public class result extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
-           switch (position) {
+
+
+            switch (position) {
                case 0:
-                   return new detail(R.string.A1, "Рассеяный", -98, "Собранный");
+                   return new Detail(R.string.A1, completeUan[0][0], completeUan[0][2], completeUan[0][1]);
                case 1:
-                   return new detail(R.string.B1, "Рассеяный", -98, "Собранный");
+                   return new Detail(R.string.B1, completeUan[1][0], completeUan[1][2], completeUan[1][1]);
                case 2:
-                   return new detail(R.string.C1, "Рассеяный", -98, "Собранный");
+                   return new Detail(R.string.C1, completeUan[2][0], completeUan[2][2], completeUan[2][1]);
                case 3:
-                   return new detail(R.string.D1, "Рассеяный", -98, "Собранный");
+                   return new Detail(R.string.D1, completeUan[3][0], completeUan[3][2], completeUan[3][1]);
                case 4:
-                   return new detail(R.string.E1, "Рассеяный", -98, "Собранный");
+                   return new Detail(R.string.E1, completeUan[4][0], completeUan[4][2], completeUan[4][1]);
                case 5:
-                   return new detail(R.string.F1, "Рассеяный", -98, "Собранный");
+                   return new Detail(R.string.F1, completeUan[5][0], completeUan[5][2], completeUan[5][1]);
                case 6:
-                   return new detail(R.string.G1, "Рассеяный", -98, "Собранный");
+                   return new Detail(R.string.G1, completeUan[6][0], completeUan[6][2], completeUan[6][1]);
                case 7:
-                   return new detail(R.string.H1, "Рассеяный", -98, "Собранный");
+                   return new Detail(R.string.H1, completeUan[7][0], completeUan[7][2], completeUan[7][1]);
                case 8:
-                   return new detail(R.string.I1, "Рассеяный", -98, "Собранный");
+                   return new Detail(R.string.I1, completeUan[8][0], completeUan[8][2], completeUan[8][1]);
                case 9:
-                   return new detail(R.string.J1, "Рассеяный", -98, "Собранный");
+                   return new Detail(R.string.J1, completeUan[9][0], completeUan[9][2], completeUan[9][1]);
 
                default:
                    return null;
