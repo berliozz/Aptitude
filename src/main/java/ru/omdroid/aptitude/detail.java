@@ -5,18 +5,19 @@ import android.view.LayoutInflater;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
  * Created by berliozz on 02.02.14.
  */
-public class detail extends Fragment {
+public class Detail extends Fragment {
     private final int descTextID;
     private final String descNegative;
     private final String descPositive;
-    private final int descRating;
+    private final String descRating;
 
-    public detail(int descTextID, String descNegative, int descRating, String descPositive) {
+    public Detail(int descTextID, String descNegative, String descRating, String descPositive) {
         this.descTextID = descTextID;
         this.descRating = descRating;
         this.descNegative = descNegative;
@@ -47,4 +48,5 @@ public class detail extends Fragment {
         textView.setText(getString(descTextID));
         return view;
     }
+
 }

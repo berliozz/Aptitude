@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class test extends Activity {
+public class Test extends Activity {
 
     TextView txtInfo, txtNum;
     Button btnYes, btnNo, btnMaybe;
@@ -157,7 +157,7 @@ public class test extends Activity {
             }
         }
         Intent testResult = new Intent();
-        testResult.setClass(test.this, result.class);
+        testResult.setClass(Test.this, Result.class);
         Bundle testSummary = new Bundle();
         testSummary.putIntArray("strDef", points);
         testResult.putExtras(testSummary);

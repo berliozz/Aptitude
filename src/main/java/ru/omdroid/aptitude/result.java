@@ -15,29 +15,28 @@ public class Result extends FragmentActivity {
     private MyAdapter mAdapter;
     private ViewPager mPager;
     private String completeUan[][];
+    int uan[];
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        String categoryQuest[];
+
         Resources testCat = getResources();
-        categoryQuest = testCat.getStringArray(R.array.category);
+        String categoryQuest[] = testCat.getStringArray(R.array.category);
 
         Bundle bndResult = this.getIntent().getExtras();
-        int uan[] = bndResult.getIntArray("strDef");
+        uan = bndResult.getIntArray("strDef");
 
-        String completeUan[][] = new String[uan.length][];
+        completeUan = new String[categoryQuest.length][3];
 
         for (int i=0; i<categoryQuest.length; i++) {
             String s = categoryQuest[i];
             String st[] = s.split(":");
 
             System.arraycopy(st, 1, completeUan[i], 0, 2);
-            System.arraycopy(uan[i], 0, completeUan[i], 2, 1);
-
-            System.out.printf(completeUan[i][0] + " - " + completeUan [i][2] + " - " + completeUan[i][1]);
+            completeUan[i][2] = String.valueOf(uan [i]);
 
         }
 
